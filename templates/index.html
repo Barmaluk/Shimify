@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css')}}">
+    
+    <title>Shimify</title>
+</head>
+
+<body>
+    <div class="container">    
+        <h1 class="display-1">Shimify</h1>    
+        <div class="fs-4">Find a song on Spotify for Shimi to play and dance to! </div>
+        <form action="">
+            <input type="hidden" id='hidden_token'>
+            
+
+            <div id="genre-selector" class="col-sm-6 form-group row mtb-5 px-0">
+                <label for="Genre" class="form-label col-sm-2">Genres</label>
+                <select name="" id="select_genre" class="form-control form-control-sm col-sm-10">
+                    <option>Select...</option>                    
+                </select>
+            </div>
+
+            <div id ="playlist-selector" class="col-sm-6 form-group row mtb-5 spx-0">
+                <label for="Genre" class="form-label col-sm-2"> Playlists </label>
+                <select name="" id="select_playlist" class="form-control form-control-sm col-sm-10">
+                    <option>Select...</option>                    
+                </select>
+            </div>
+
+            <div id="submit-button" class="col-sm-6 row form-group px-0">
+                <button type="submit" id="btn_submit" class="btn btn-primary col-sm-12">Search</button>
+            </div>
+
+        </form>        
+
+        <div class="row">
+            <div class="col-sm-6 px-0">
+                <div class="list-group song-list">
+
+                </div>                                             
+            </div>
+            <div class="offset-md-1 col-sm-4" id="song-detail">   
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="{{url_for('static', filename='app.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>    
+</body>
+</html>
